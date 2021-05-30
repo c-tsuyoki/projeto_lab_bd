@@ -1,73 +1,73 @@
 CREATE TABLE login_usuarios ( 
-id int AUTO_INCREMENT PRIMARY KEY, 
-login varchar(100) NOT NULL, 
-senha varchar(100) NOT NULL, 
-tipo char NOT NULL,
-id_cliente int NOT NULL
+    id int AUTO_INCREMENT PRIMARY KEY, 
+    login varchar(100) NOT NULL, 
+    senha varchar(100) NOT NULL, 
+    tipo char NOT NULL,
+    id_cliente int NOT NULL
 ) engine = INNODB;
 
 
 CREATE TABLE clientes ( 
-id int AUTO_INCREMENT PRIMARY KEY, 
-nome varchar(100) NOT NULL,
-endereco varchar(100) NOT NULL, 
-complemento varchar(45), 
-bairro varchar(50) NOT NULL, 
-cidade varchar(60) NOT NULL, 
-estado varchar(2) NOT NULL, 
-cpf_cnpj varchar(14) NOT NULL,
-rg varchar(11) NOT NULL,
-email varchar(100) NOT NULL,
-telefone varchar(15),
-celular varchar(15),
-cep varchar(15) NOT NULL
+    id int AUTO_INCREMENT PRIMARY KEY, 
+    nome varchar(100) NOT NULL,
+    endereco varchar(100) NOT NULL, 
+    complemento varchar(45), 
+    bairro varchar(50) NOT NULL, 
+    cidade varchar(60) NOT NULL, 
+    estado varchar(2) NOT NULL, 
+    cpf_cnpj varchar(14) NOT NULL,
+    rg varchar(11) NOT NULL,
+    email varchar(100) NOT NULL,
+    telefone varchar(15),
+    celular varchar(15),
+    cep varchar(15) NOT NULL
 ) engine = INNODB;
 
 
 CREATE TABLE prestadores ( 
-id int AUTO_INCREMENT PRIMARY KEY, 
-nome varchar(100) NOT NULL,
-endereco varchar(100) NOT NULL, 
-complemento varchar(45), 
-bairro varchar(50) NOT NULL, 
-cidade varchar(60) NOT NULL, 
-estado varchar(2) NOT NULL, 
-cpf_cnpj varchar(14) NOT NULL,
-rg varchar(11) NOT NULL,
-email varchar(100) NOT NULL,
-telefone varchar(15),
-celular varchar(15),
-cep varchar(15) NOT NULL
+    id int AUTO_INCREMENT PRIMARY KEY, 
+    nome varchar(100) NOT NULL,
+    endereco varchar(100) NOT NULL, 
+    complemento varchar(45), 
+    bairro varchar(50) NOT NULL, 
+    cidade varchar(60) NOT NULL, 
+    estado varchar(2) NOT NULL, 
+    cpf_cnpj varchar(14) NOT NULL,
+    rg varchar(11) NOT NULL,
+    email varchar(100) NOT NULL,
+    telefone varchar(15),
+    celular varchar(15),
+    cep varchar(15) NOT NULL
 ) engine = INNODB;
 
 
 CREATE TABLE orcamentos ( 
-id int AUTO_INCREMENT PRIMARY KEY, 
-data date NOT NULL,
-valor numeric(10,2) NOT NULL, 
-id_prestador int NOT NULL, 
-data_expiracao date NOT NULL,
-id_cliente int NOT NULL,
-id_servico int NOT NULL,
-observacao varchar(100)
+    id int AUTO_INCREMENT PRIMARY KEY, 
+    data date NOT NULL,
+    valor numeric(10,2) NOT NULL, 
+    id_prestador int NOT NULL, 
+    data_expiracao date NOT NULL,
+    id_cliente int NOT NULL,
+    id_servico int NOT NULL,
+    observacao varchar(100)
 ) engine = INNODB;
 
 
 CREATE TABLE servicos ( 
-id int AUTO_INCREMENT PRIMARY KEY, 
-servico varchar(50) NOT NULL,
-id_categoria int NOT NULL
+    id int AUTO_INCREMENT PRIMARY KEY, 
+    servico varchar(50) NOT NULL,
+    id_categoria int NOT NULL
 ) engine = INNODB;
 
 
 CREATE TABLE categoria ( 
-id int AUTO_INCREMENT PRIMARY KEY, 
-categoria varchar(50) NOT NULL
+    id int AUTO_INCREMENT PRIMARY KEY, 
+    categoria varchar(50) NOT NULL
 ) engine = INNODB;
 
 CREATE TABLE prestadores_servicos ( 
-id_prestador int NOT NULL, 
-id_servico int NOT NULL
+    id_prestador int NOT NULL, 
+    id_servico int NOT NULL
 ) engine = INNODB;
 
 

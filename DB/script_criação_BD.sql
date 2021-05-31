@@ -9,7 +9,7 @@ CREATE TABLE login_usuarios (
 
 CREATE TABLE clientes ( 
     id int AUTO_INCREMENT PRIMARY KEY, 
-    nome varchar(100) NOT NULL,
+    nome_cli varchar(100) NOT NULL,
     endereco varchar(100) NOT NULL, 
     complemento varchar(45), 
     bairro varchar(50) NOT NULL, 
@@ -26,14 +26,12 @@ CREATE TABLE clientes (
 
 CREATE TABLE prestadores ( 
     id int AUTO_INCREMENT PRIMARY KEY, 
-    nome varchar(100) NOT NULL,
+    nome_prest varchar(100) NOT NULL,
     endereco varchar(100) NOT NULL, 
     complemento varchar(45), 
     bairro varchar(50) NOT NULL, 
     cidade varchar(60) NOT NULL, 
     estado varchar(2) NOT NULL, 
-    cpf_cnpj varchar(14) NOT NULL,
-    rg varchar(11) NOT NULL,
     email varchar(100) NOT NULL,
     telefone varchar(15),
     celular varchar(15),
@@ -67,7 +65,8 @@ CREATE TABLE categoria (
 
 CREATE TABLE prestadores_servicos ( 
     id_prestador int NOT NULL, 
-    id_servico int NOT NULL
+    id_servico int NOT NULL,
+    PRIMARY KEY (id_prestador, id_servico)
 ) engine = INNODB;
 
 

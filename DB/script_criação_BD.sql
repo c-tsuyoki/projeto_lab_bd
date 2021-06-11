@@ -1,7 +1,7 @@
 CREATE TABLE login_usuarios ( 
     id int AUTO_INCREMENT PRIMARY KEY, 
     login varchar(100) NOT NULL, 
-    senha varchar(100) NOT NULL, 
+    senha_login varchar(100) NOT NULL, 
     tipo char NOT NULL,
     id_cliente int NOT NULL
 ) engine = INNODB;

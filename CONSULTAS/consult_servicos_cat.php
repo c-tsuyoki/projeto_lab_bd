@@ -1,3 +1,5 @@
+<!-6a - relatório de todos os serviços, com opção de filtro por uma determinada categoria.->
+
 <?php
     if(session_status() !== PHP_SESSION_ACTIVE) {
 	    session_start();

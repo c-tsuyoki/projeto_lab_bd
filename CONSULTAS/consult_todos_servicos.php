@@ -1,3 +1,5 @@
+<!-7a - consulta de serviços disponíveis com opção de digitar uma palavra para filtro->
+
 <?php
     if(session_status() !== PHP_SESSION_ACTIVE) {
 	    session_start();
@@ -17,14 +19,14 @@
             <label> Buscar Serviço: </label>
             <input type="text" name="serv" placeholder="Buscar serviços" size="30">
             <br><br>
-            <input type="submit" name="sendPesqCat" value="Buscar"><br><br>
+            <input type="submit" name="sendPesqServ" value="Buscar"><br><br>
             <input type="submit" name="tudo" value="Todos os Serviços">
         </form>
 
         <?php
-            $sendPesqCat = filter_input(INPUT_POST, 'sendPesqCat', FILTER_SANITIZE_STRING);
+            $sendPesqServ = filter_input(INPUT_POST, 'sendPesqServ', FILTER_SANITIZE_STRING);
             $tudo = filter_input(INPUT_POST, 'tudo', FILTER_SANITIZE_STRING);
-            if($sendPesqCat) {
+            if($sendPesqServ) {
                 $serv = filter_input(INPUT_POST, 'serv', FILTER_SANITIZE_STRING);
                 $query = "SELECT servico FROM servicos WHERE servico LIKE '%$serv%'";
                 echo "<h1> Resultado da Busca </h1>";

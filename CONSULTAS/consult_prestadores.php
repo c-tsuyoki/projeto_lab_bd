@@ -1,3 +1,5 @@
+<!-6b - relatório de todos os prestadores para cada serviço->
+
 <?php
     if(session_status() !== PHP_SESSION_ACTIVE) {
 	    session_start();
@@ -9,20 +11,20 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title> Todos os Prestadores </title>
+        <title> Prestadores por serviço </title>
     </head>
     <body>
-        <h1> Todos os Prestadores </h1>
+        <h1> Prestadores por serviço </h1>
         <form method="POST" action="">
             <label> Buscar Serviço: </label>
             <input type="text" name="serv" placeholder="Buscar serviço" size="30">
             <br><br>
-            <input type="submit" name="sendPesqTprest" value="Buscar"><hr>
+            <input type="submit" name="sendPesqPrest" value="Buscar"><hr>
         </form>
 
         <?php
-            $sendPesqTprest = filter_input(INPUT_POST, 'sendPesqTprest', FILTER_SANITIZE_STRING);
-            if($sendPesqTprest) {
+            $sendPesqPrest = filter_input(INPUT_POST, 'sendPesqPrest', FILTER_SANITIZE_STRING);
+            if($sendPesqPrest) {
                 $serv = filter_input(INPUT_POST, 'serv', FILTER_SANITIZE_STRING);
                 $query = "SELECT prestadores_servicos.id_prestador, prestadores_servicos.id_servico, 
                 prestadores.nome_prest, servicos.servico FROM prestadores_servicos JOIN 
@@ -30,8 +32,8 @@
                 prestadores_servicos.id_servico = servicos.id WHERE servicos.servico LIKE '%$serv%'";
                 $result = mysqli_query($con, $query);
                 while($row = mysqli_fetch_assoc($result)) {
-                    echo "Prestador(a): " . $row['nome_prest'] . "<br>";
-                    echo "Serviço: " . $row['servico'] . "<br><hr>";
+                    echo "Serviço: " . $row['servico'] . "<br>";
+                    echo "Prestador(a): " . $row['nome_prest'] . "<br><hr>";
                 }
             }
         ?>

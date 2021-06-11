@@ -1,3 +1,5 @@
+<!-6d - relatório de todos os orçamentos de um determinado cliente->
+
 <?php
     if(session_status() !== PHP_SESSION_ACTIVE) {
 	    session_start();
@@ -31,12 +33,12 @@
                 WHERE clientes.nome_cli LIKE '%$cliente%'";
                 $result = mysqli_query($con, $query);
                 while($row = mysqli_fetch_assoc($result)) {
-                    echo "Data: " . $row['data'] . "<br>";
-                    echo "Valor: " . $row['valor'] . "<br>";
-                    echo "Prestador: " . $row['nome_prest'] . "<br>";
-                    echo "Data de Expiração: " . $row['data_expiracao'] . "<br>";
                     echo "Cliente: " . $row['nome_cli'] . "<br>";
+                    echo "Data: " . $row['data'] . "<br>";
+                    echo "Data de Expiração: " . $row['data_expiracao'] . "<br>";
                     echo "Serviço: " . $row['servico'] . "<br>";
+                    echo "Prestador: " . $row['nome_prest'] . "<br>";
+                    echo "Valor: " . $row['valor'] . "<br>";
                     echo "Observação: " . $row['observacao'] . "<br><hr>";
                 }
             }

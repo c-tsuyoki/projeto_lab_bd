@@ -1,3 +1,5 @@
+<!-7b - consulta de prestadores disponíveis com opção de digitar ou selecionar um serviço específico->
+
 <?php
     if(session_status() !== PHP_SESSION_ACTIVE) {
 	    session_start();

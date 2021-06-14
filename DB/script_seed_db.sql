@@ -1,14 +1,14 @@
 INSERT INTO categoria (categoria) VALUE ('Administração');
 INSERT INTO categoria (categoria) VALUE ('Construção');
 INSERT INTO categoria (categoria) VALUE ('Energia');
-INSERT INTO categoria (categoria) VALUE ('Limpeza');
+INSERT INTO categoria (categoria) VALUE ('Suporte');
 INSERT INTO categoria (categoria) VALUE ('Manutenção');
 INSERT INTO categoria (categoria) VALUE ('Tecnologia');
 
-INSERT INTO servicos (servico, id_categoria) VALUES ('Contador', 1);
+INSERT INTO servicos (servico, id_categoria) VALUES ('Contabilidade', 1);
 INSERT INTO servicos (servico, id_categoria) VALUES ('Pedreiro', 2);
 INSERT INTO servicos (servico, id_categoria) VALUES ('Eletricista', 3);
-INSERT INTO servicos (servico, id_categoria) VALUES ('Diarista', 4);
+INSERT INTO servicos (servico, id_categoria) VALUES ('Analista', 4);
 INSERT INTO servicos (servico, id_categoria) VALUES ('Encanador', 5);
 INSERT INTO servicos (servico, id_categoria) VALUES ('Programador', 6);
 
@@ -27,6 +27,11 @@ VALUES ('Andre', 'Rua Monsenhor n. 251', 'ao lado da praça', 'São João', 'Sor
 INSERT INTO clientes (nome_cli, endereco, complemento, bairro, cidade, estado, cpf_cnpj, rg, email, telefone, celular, cep) 
 VALUES ('Paulo', 'Rua Capão n. 412', 'proxímo ao escritório', 'Jardim Verde', 'Capão Bonito', 'SP', '555.666.777-88', '55.666.777-5', 
 'paulo@servico.com', '(15)3378-1100', '(15)99555-6666', '18211-221');
+
+INSERT INTO login_usuarios (login, senha_login, tipo, id_cliente) VALUES ('marcos', 1234, 'ADM', 1);
+INSERT INTO login_usuarios (login, senha_login, tipo, id_cliente) VALUES ('matheus', 1234, 'ADM', 2);
+INSERT INTO login_usuarios (login, senha_login, tipo, id_cliente) VALUES ('cris', 1234, 'CLI', 3);
+INSERT INTO login_usuarios (login, senha_login, tipo, id_cliente) VALUES ('lucas', 1234, 'CLI', 4);
 
 INSERT INTO prestadores (nome_prest, endereco, complemento, bairro, cidade, estado, email, telefone, celular, cep) 
 VALUES ('Cristian', 'Rua Moraes n. 100', 'casa', 'Retiro', 'São Miguel Arcanjo', 'SP', 'cristian@servico.com', '(15)3378-1100', '(15)99111-2222', '18230-000');

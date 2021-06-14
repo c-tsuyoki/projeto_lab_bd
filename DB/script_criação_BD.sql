@@ -2,7 +2,7 @@ CREATE TABLE login_usuarios (
     id int AUTO_INCREMENT PRIMARY KEY, 
     login varchar(100) NOT NULL, 
     senha_login varchar(100) NOT NULL, 
-    tipo char NOT NULL,
+    tipo char(3) NOT NULL,
     id_cliente int NOT NULL
 ) engine = INNODB;
 
@@ -76,7 +76,7 @@ ALTER TABLE orcamentos ADD CONSTRAINT fk_orcamentos_prestador FOREIGN KEY (id_pr
 
 ALTER TABLE orcamentos ADD CONSTRAINT fk_orcamentos_cliente FOREIGN KEY (id_cliente) REFERENCES clientes (id);
 
-ALTER TABLE orcamentos ADD CONSTRAINT fk_orcamentos_servicos FOREIGN KEY (id_servico) REFERENCES clientes (id);
+ALTER TABLE orcamentos ADD CONSTRAINT fk_orcamentos_servicos FOREIGN KEY (id_servico) REFERENCES servicos (id);
 
 ALTER TABLE servicos ADD CONSTRAINT fk_servicos_categoria FOREIGN KEY (id_categoria) REFERENCES categoria (id);
 
